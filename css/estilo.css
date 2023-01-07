@@ -1,0 +1,43 @@
+form {
+    width: 50%; /* ancho del formulario */
+    margin: 0 auto; /* centrar horizontalmente */
+    padding: 20px; /* espacio interno */
+    background-color: #f2f2f2; /* color de fondo */
+    border-radius: 5px; /* borde redondeado */
+  }
+  
+  label {
+    display: block; /* mostrar etiqueta en una línea nueva */
+    margin-bottom: 5px; /* espacio debajo de la etiqueta */
+  }
+  
+  input[type="text"], input[type="date"], canvas {
+    width: 100%; /* ancho del campo de texto */
+    padding: 12px 20px; /* espacio interno */
+    margin: 8px 0; /* espacio debajo del campo */
+    box-sizing: border-box; /* incluir el borde y el espacio en el ancho */
+    border: 1px solid #ccc; /* borde */
+    border-radius: 4px; /* borde redondeado */
+  }
+  
+  input[type="submit"],select {
+    width: 100%; /* ancho del botón */
+    background-color: #4CAF50; /* color de fondo */
+    color: white; /* color del texto */
+    padding: 14px 20px; /* espacio interno */
+    margin: 8px 0; /* espacio debajo del botón */
+    border: none; /* sin borde */
+    border-radius: 4px; /* borde redondeado */
+    cursor: pointer; /* cursor de mano */
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #45a049; /* color de fondo al pasar el mouse */
+  }
+
+  canvas {
+    border-color: purple;
+    border-width: 5px;
+    border-style: dotted;
+    border-radius: 20px;
+  }
