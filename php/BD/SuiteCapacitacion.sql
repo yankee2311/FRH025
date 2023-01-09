@@ -42,3 +42,9 @@ CREATE TABLE Asistencia (
    Firma VARCHAR(50) NOT NULL
 );
 
+--Crea la tabla calificaciones
+CREATE TABLE Calificaciones (
+   Id INTEGER PRIMARY KEY,
+   Id_Asistencia INTEGER NOT NULL,
+   Calificacion INTEGER NOT NULL
+);

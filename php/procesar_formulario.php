@@ -40,8 +40,8 @@
   }
 
   // Guardar la imagen del canvas en la carpeta "firmas"
-  $imagen_data = base64_decode(preg_replace('#^data:image/\w+;base64,#i', '', $imagen_data_url));
-  file_put_contents('firmas/'.$numero_empleado.'.png', $imagen_data);
+  //$imagen_data = base64_decode(preg_replace('#^data:image/\w+;base64,#i', '', $imagen_data_url));
+  //file_put_contents('firmas/'.$numero_empleado.'.png', $imagen_data);
 
   include 'guardar.php';
 ?>
