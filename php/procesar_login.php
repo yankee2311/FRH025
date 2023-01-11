@@ -1,30 +1,37 @@
 <?php
-  // Incluir el archivo de configuración de la base de datos
-  require_once 'config.php';
+    // Incluimos el archivo de conexión a la BD
+    include 'config.php';
 
-  // Obtener los datos del formulario
-  $username = $_POST['username'];
-  $password = $_POST['password'];
+    // Verificamos si se han enviado los datos del formulario
+    if (isset($_POST['username']) && isset($_POST['password'])) {
 
-  // Comprobar que el usuario existe en la base de datos
-  $sql = "SELECT * FROM usuarios WHERE username = '$username'";
-  $result = mysqli_query($conn, $sql);
-  $row = mysqli_fetch_assoc($result);
+        // Almacenamos los datos en variables
+        $username = $_POST['username'];
+        $password = $_POST['password'];
 
-  // Verificar que el usuario existe y que la contraseña es correcta
-  if ($row && password_verify($password, $row['password'])) {
-    // Iniciar sesión y redirigir al usuario a la página de inicio
-    session_start();
-    $_SESSION['username'] = $username;
-    header('Location: /index.php');
-  } else {
-    // Mostrar un mensaje de error usando JavaScript
-    echo '<script>';
-    echo 'alert("Error: nombre de usuario o contraseña incorrectos");';
-    echo 'window.location.href="/login.html";';
-    echo '</script>';
-  }
+        // Preparamos la sentencia SQL para seleccionar los datos de usuario
+        $sql = "SELECT * FROM usuarios WHERE Usuario = ? AND Contraseña = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param('ss', $username, $password);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        if ($result->num_rows > 0) {
+            // Iniciamos la sesión
+            echo '<script>';
+            echo 'alert("contraseña correcta");';
+            echo '</script>';
+            session_start();
+            $_SESSION['username'] = $username;
+            //header('location: home.php');
+            header('Location: ../index.php');
+        } else {
+            echo '<script>';
+            echo 'alert("Error: nombre de usuario o contraseña incorrectos");';
+            echo 'window.location.href="../login.php";';
+            echo '</script>';
+        }
 
-  // Cerrar la conexión a la base de datos
-  mysqli_close($conn);
+        // cerramos la conexión
+        $conn->close();
+    }
 ?>

@@ -8,6 +8,6 @@
     // (el resto del código de la página iría aquí)
   } else {
     // La sesión no está iniciada, redirigir al usuario a login.php
-    header('Location: /login.php');
+    header('Location: login.php');
   }
 ?>
