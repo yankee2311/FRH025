@@ -1,12 +1,8 @@
-<html>
-  <head>
-    <title>Consultar asistencias</title>
-  </head>
-  <body>
-    <h1>Consultar asistencias</h1>
-    <form action="php/consultar_asistencias.php" method="post">
-      <label for="curso">Curso:</label><br>
-      <select id="curso" name="curso">
+
+<h1>Consultar asistencias</h1>
+<form action="php/consultar_asistencias.php" method="post">
+  <label for="curso">Curso:</label><br>
+    <select id="curso" name="curso">
         <option value="todos">Todos</option>
         <!-- Aquí debes añadir las opciones para los cursos disponibles -->
         <?php
@@ -19,7 +15,7 @@
             }
             mysqli_close($conn);
           ?>  
-        </select>
+          </select>
       </select><br>
       <br>
       <label for="mes">Mes:</label><br>
@@ -37,6 +33,13 @@
         <option value="octubre">Octubre</option>
         <option value="noviembre">Noviembre</option>
         <option value="diciembre">Diciembre</option>
+      </select><br>
+      <label for="no">año:</label><br>
+      <select id="ano" name="ano">
+        <option value="todos">Todos</option>
+        <option value="2024">2024</option>
+        <option value="2023">2023</option>
+        <option value="2022">2022</option>
       </select><br>
       <br>
       <input type="submit" value="Buscar">
