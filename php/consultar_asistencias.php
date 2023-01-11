@@ -48,8 +48,8 @@
     echo "<th>Capacitación</th>";
     echo "<th>Número de empleado</th>";
     echo "<th>Nombre</th>";
-    echo "<th>Puesto</th>";
     echo "<th>Firma</th>";
+    echo "<th>Puesto</th>";
     echo "<th>Calificación</th>"
     echo "<th>Fecha</th>";
     echo "</tr>";
@@ -60,8 +60,8 @@
       echo "<td>".$row['capacitacion']."</td>";
       echo "<td>".$row['numero_empleado']."</td>";
       echo "<td>".$row['nombre']."</td>";
-      echo "<td>".$row['puesto']."</td>";
       echo "<td><img src='".$row['imagen']."' alt='Firma' width='100'></td>";
+      echo "<td>".$row['puesto']."</td>";
       // calificacion pendiente sacar
       echo "<td>      </td>";
       echo "<td>".$row['fecha']."</td>";
