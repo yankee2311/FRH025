@@ -5,7 +5,7 @@
   $ano = $_POST["ano"];
 
   // Consultar asistencias
-  $sql = "SELECT * FROM attendance";
+  $sql = "SELECT * FROM Asistencia";
 
   // Si se seleccionó un curso específico, agregar a la consulta
   if ($curso != "todos") {

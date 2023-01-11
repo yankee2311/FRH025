@@ -6,7 +6,6 @@ CREATE TABLE Usuarios (
    Usuario VARCHAR(50) NOT NULL,
    Contraseña VARCHAR(50) NOT NULL,
    No_Emp INTEGER NOT NULL,
-   area VARCHAR(50) NOT NULL
 );
 
 --Crea la tabla empleado
