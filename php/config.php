@@ -3,7 +3,7 @@
   $servername = "localhost"; // Nombre del servidor
   $username = "root"; // Nombre de usuario
   $password = ""; // Contraseña
-  $dbname = "firmas"; // Nombre de la base de datos
+  $dbname = "SuiteCapacitacion"; // Nombre de la base de datos
 
   // Crear la conexión
   $conn = mysqli_connect($servername, $username, $password, $dbname);

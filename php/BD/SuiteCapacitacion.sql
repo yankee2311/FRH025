@@ -1,8 +1,8 @@
--Crear una base de datos, en esta app la base de datos se llama SuiteCapacitacion
+--Crear una base de datos, en esta app la base de datos se llama SuiteCapacitacion
 
 --Crea la tabla para los usuarios
 CREATE TABLE Usuarios (
-   ID INTEGER PRIMARY KEY,
+   ID INTEGER PRIMARY KEY AUTO_INCREMENT,
    Usuario VARCHAR(50) NOT NULL,
    Contraseña VARCHAR(50) NOT NULL,
    No_Emp INTEGER NOT NULL,

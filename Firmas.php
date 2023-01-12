@@ -21,7 +21,7 @@
             $result = mysqli_query($conn, "SELECT * FROM cursos");
             while ($row = mysqli_fetch_assoc($result)) {
               // Agregar opción a la lista
-              echo "<option value='".$row['id']."'>".$row['nombre']."</option>";
+              echo "<option value='".$row['id']."'>".$row['Nom_curso']."</option>";
             }
             mysqli_close($conn);
           ?>  

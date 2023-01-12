@@ -10,7 +10,7 @@
       <label for="password">Contraseña:</label><br>
       <input type="password" id="password" name="password"><br><br>
       <input type="submit" value="Iniciar sesión">
-      <input type="button" value="Registrar nuevo usuario" onclick="window.location.href='consular.php'">
+      <input type="button" value="Registrar nuevo usuario" onclick="window.location.href='registrar.php'">
     </form>
 
 </body>
