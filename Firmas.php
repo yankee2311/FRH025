@@ -1,5 +1,6 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
     <form action="php/frh025.php" method="post">
         <label for="numero_empleado">Número de empleado:</label><br>
         <input type="text" id="numero_empleado" name="numero_empleado"><br>
@@ -29,9 +30,12 @@
         <br>
         <label for="firma">Firma:</label><br>
         <canvas id="dibujo" style="border: 2px solid black;"></canvas><br>
+        <a href="#" onclick="ctx.clearRect(0, 0, canvas.width, canvas.height);">Borrar Firma</a> 
         <br>
         <input type="hidden" id="dibujo_data" name="dibujo_data">
         <input type="submit" value="Enviar">
-      </form>   
-      <script src="js/script.js"></script>
+      </form> 
+      <script src="js/script.js"></script> 
+      
 
+      

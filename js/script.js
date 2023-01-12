@@ -16,7 +16,7 @@ canvas.addEventListener('mousedown', function(e) {
 canvas.addEventListener('mousemove', function(e) {
   if (painting) {
     ctx.beginPath();
-    ctx.strokeStyle = 'red';
+    ctx.strokeStyle = 'blue';
     ctx.lineWidth = 2;
     ctx.moveTo(lastX, lastY);
     ctx.lineTo(e.offsetX, e.offsetY);
@@ -43,7 +43,7 @@ canvas.addEventListener('touchstart', function(e) {
   canvas.addEventListener('touchmove', function(e) {
     if (painting) {
       ctx.beginPath();
-      ctx.strokeStyle = 'red';
+      ctx.strokeStyle = 'blue';
       ctx.lineWidth = 2;
       ctx.moveTo(lastX, lastY);
       ctx.lineTo(e.touches[0].clientX - canvas.offsetLeft, e.touches[0].clientY - canvas.offsetTop);
@@ -60,3 +60,7 @@ canvas.addEventListener('touchstart', function(e) {
     lastX = -1;
     lastY = -1;
   });
+
+  function borrarCanvas() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+}
