@@ -7,6 +7,7 @@
 
   // Crear la conexión
   $conn = mysqli_connect($servername, $username, $password, $dbname);
+  $conn->set_charset("utf8");
   // Verificar la conexión
   if (!$conn) {
       die("Conexión fallida: " . mysqli_connect_error());

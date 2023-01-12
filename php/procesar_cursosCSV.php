@@ -1,47 +1,25 @@
 <?php
-
-    // Conexión a la base de datos
+    // Conectarse a la base de datos
     include 'config.php';
-    
-    //obtengo el file csv
-    $filecsv = $_POST["FileCSV"];
-    // Abrir el archivo CSV
-    $file = fopen($filecsv, "r");
 
-    // Leer las líneas del archivo
-    while (($line = fgetcsv($file)) !== false) {
-        // Asignar los valores a las variables correspondientes
-        $nom_curso = $line[0];
-        $objetivo = $line[1];
-        $area = $line[2];
-        $duracion = $line[3];
-        $capacitador = $line[4];
-        $modalidad = $line[5];
-        $activo = $line[6];
 
-        // Validar y sanitizar los datos
-        $nom_curso = mysqli_real_escape_string($conn, $nom_curso);
-        $objetivo = mysqli_real_escape_string($conn, $objetivo);
-        $area = mysqli_real_escape_string($conn, $area);
-        $duracion = (int) $duracion;
-        $capacitador = mysqli_real_escape_string($conn, $capacitador);
-        $modalidad = mysqli_real_escape_string($conn, $modalidad);
-        $activo = (int) $activo;
+    // Comprobar si se ha enviado el archivo CSV
+    if(isset($_FILES['fileCSV']) && $_FILES['fileCSV']['error'] == 0) {
+        $csvFile = fopen($_FILES['fileCSV']['tmp_name'], 'r');
 
-        // Insertar los datos en la tabla "Cursos"
-        $sql = "INSERT INTO Cursos (Nom_curso, Objetivo, Area, Duracion, Capacitador, Modalidad, Activo)
-                VALUES ('$nom_curso', '$objetivo', '$area', $duracion, '$capacitador', '$modalidad', $activo)";
-        $result = mysqli_query($conn, $sql);
+        // Saltar la primera línea (encabezados)
+        fgetcsv($csvFile);
+
+        // Recorrer las líneas restantes del archivo CSV
+        while($line = fgetcsv($csvFile)) {
+            // Insertar datos en la tabla "Cursos"
+            $sql = "INSERT INTO Cursos (Nom_curso, Objetivo, Area, Duracion, Capacitador, Modalidad, Activo) VALUES ('" . utf8_encode($line[0]) . "', '" . utf8_encode($line[1]) . "', '" . utf8_encode($line[2]) . "', '" . $line[3] . "', '" . utf8_encode($line[4]) . "', '" . utf8_encode($line[5]) . "', '" . $line[6] . "')";
+            $conn->query($sql);
+        }
+
+        fclose($csvFile);
     }
-
-    // Verificar si la importación fue exitosa
-    if ($result) {
-        echo "Los datos se han importado correctamente.";
-    } else {
-        echo "Error: " . mysqli_error($conn);
+    else {
+        echo "Error al cargar el archivo CSV";
     }
-
-    // Cerrar el archivo CSV y la conexión a la base de datos
-    fclose($file);
-    mysqli_close($conn);
 ?>

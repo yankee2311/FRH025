@@ -23,8 +23,10 @@
             <input type="checkbox" id="activo" name="activo" value="1" required><br>
         <input type="submit" value="Enviar">
     </form>
-    <form action="php/procesar_cursosCSV.php" method="post">
+    <form action="php/procesar_cursosCSV.php" method="post" enctype="multipart/form-data">
+        <label for="fileCSV">Seleccione un archivo CSV:</label>
         <input type="file" id="fileCSV" name="fileCSV" required><br>
         <input type="submit" value="Enviar">
     </form>
+
 
