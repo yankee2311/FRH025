@@ -28,7 +28,7 @@
         </select>
         <br>
         <label for="firma">Firma:</label><br>
-        <canvas id="dibujo" ></canvas><br>
+        <canvas id="dibujo" style="border: 2px solid black;"></canvas><br>
         <br>
         <input type="hidden" id="dibujo_data" name="dibujo_data">
         <input type="submit" value="Enviar">
