@@ -28,11 +28,11 @@
     // Verificar si la inserción fue exitosa
     if ($result) {
         echo "<script>alert('Los datos se han insertado correctamente.');</script>";
-        echo "<script>window.location.replace('../cursos.php');</script>";
+        echo "<script>window.location.replace('../Cursos/cursos.php');</script>";
         //header('Location: ../cursos/cursos.php');
     } else {
         echo "<script>alert('A ocurrido un error');</script>";
-        echo "<script>window.location.replace(../cursos.php');</script>";
+        echo "<script>window.location.replace('../Cursos/Cursos.php');</script>";
         //header('Location: ../cursos/cursos.php');
     }
 

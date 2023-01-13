@@ -11,7 +11,7 @@
       //provisionalmente la página inicial es la de el formulario para firmar
       //include 'Firmas.php';
       echo "<a href='firmas.php'>Enlace 1</a>";
-      echo "<a href='cursos.php'>Enlace 1</a>";
+      echo "<a href='Cursos/cursos.php'>Enlace 1</a>";
       echo "<a href='consultar.php'>Enlace 1</a>";
 
     echo $_SESSION['username'];

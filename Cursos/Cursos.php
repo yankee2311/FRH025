@@ -1,5 +1,7 @@
 
-    <form action="php/procesar_cursos.php" method="post">
+
+<div id="form-container" style="display:none;">
+    <form action="../php/procesar_cursos.php" method="post">
         <label for="nom_curso">Nombre del curso:</label>
             <input type="text" id="nom_curso" name="nom_curso" required><br>
         <label for="objetivo">Objetivo:</label>
@@ -28,5 +30,7 @@
         <input type="file" id="fileCSV" name="fileCSV" required><br>
         <input type="submit" value="Enviar">
     </form>
-
+    </div>
+<button id="show-form-button">Mostrar formulario</button>
+<script src="../js/mostrarDiv.js"></script>
 
