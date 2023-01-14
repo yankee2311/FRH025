@@ -1,5 +1,3 @@
-
-
 <div id="form-container" style="display:none;">
     <form action="../php/procesar_cursos.php" method="post">
         <label for="nom_curso">Nombre del curso:</label>
@@ -33,4 +31,24 @@
     </div>
 <button id="show-form-button">Mostrar formulario</button>
 <script src="../js/mostrarDiv.js"></script>
+
+<form action="../php/Buscar_cursos.php" method="post">
+    <label for="nom_curso">Selecciona un curso:</label>
+    <select name="nom_curso" id="nom_curso">
+        <!-- Aquí debes añadir las opciones para los cursos disponibles -->
+            <?php
+                // Establecer conexión a la base de datos y ejecutar consulta para obtener las opciones de la lista
+                include '../php/config.php';
+                $result = mysqli_query($conn, "SELECT * FROM cursos");
+                while ($row = mysqli_fetch_assoc($result)) {
+                    // Agregar opción a la lista
+                    echo "<option value='".$row['Id']."'>".$row['Nom_curso']."</option>";
+                }
+                mysqli_close($conn);
+            ?>  
+    </select>
+    <br>
+    <input type="submit" value="Enviar">
+</form>
+
 

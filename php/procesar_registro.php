@@ -20,6 +20,14 @@
             echo "Error: " . $sql . "<br>" . $conn->error;
         }
 
+        echo "<a href='#' onclick='redirect()'>Haga clic aquí</a>";
+        echo "<script>
+                function redirect() {
+                    window.location.replace('../index.php');
+                }
+            </script>"
+        ;
+
         // Cerramos la conexión
         $conn->close();
     }
