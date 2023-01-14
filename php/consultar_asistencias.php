@@ -43,32 +43,25 @@
     $result = mysqli_query($conn, $sql);
 
     // Mostrar resultados en tabla
-    echo "<table>";
-    echo "<tr>";
-    echo "<th>Capacitación</th>";
-    echo "<th>Número de empleado</th>";
-    echo "<th>Nombre</th>";
-    echo "<th>Firma</th>";
-    echo "<th>Puesto</th>";
-    echo "<th>Calificación</th>";
-    echo "<th>Fecha</th>";
-    echo "</tr>";
+
+    include '../TABLAPRUEBA.PHP';
 
     // Recorrer cada fila de resultados y mostrar en una fila de la tabla
     while ($row = mysqli_fetch_assoc($result)) {
         echo "<tr>";
-        echo "<td>".$row['capacitacion']."</td>";
-        echo "<td>".$row['numero_empleado']."</td>";
-        echo "<td>".$row['nombre']."</td>";
+        echo "<td>".$row['No_Emp']."</td>";
+        echo "<td>".$row['Nom_Empleado']."</td>";
+        echo "<td>".$row['Id_Curso']."</td>";
         echo "<td><img src='".$row['imagen']."' alt='Firma' width='100'></td>";
-        echo "<td>".$row['puesto']."</td>";
+        echo "<td>".$row['Puesto']."</td>";
         // calificacion pendiente sacar
         echo "<td>      </td>";
-        echo "<td>".$row['fecha']."</td>";
+        echo "<td>".$row['Fecha']."</td>";
         echo "</tr>";
     }
 
     // Cerrar conexión a la base de datos
     mysqli_close($conn);
+    echo "</tbody";
     echo "</table>";
 ?>

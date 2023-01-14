@@ -45,6 +45,7 @@ CREATE TABLE programados (
 CREATE TABLE Asistencia (
    Id INTEGER PRIMARY KEY,
    No_Emp INTEGER NOT NULL,
+   Nom_Empleado VARCHAR(50) NOT NULL,
    Id_Curso INTEGER NOT NULL,
    Puesto VARCHAR(50) NOT NULL,
    Fecha DATE NOT NULL,

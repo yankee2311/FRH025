@@ -45,10 +45,15 @@ th {
     </style>
 </head>
 <body>
+    <script>
+        function printPage() {
+            window.print();
+        }
+    </script>
     <table>
         <tbody>
             <tr>
-                <td colspan="2" rowspan="2"><img src="img/atc.png" width="100px" id="atc" aling="center"></td>
+                <td colspan="2" rowspan="2"><img src="../img/atc.png" width="100px" id="atc" aling="center"></td>
                 <td colspan="4" rowspan="2"><p aling="center">Lista de Asistencia</p></td>
                 <td class="clave">F.RH.025</td>
             </tr>
@@ -86,13 +91,8 @@ th {
                 <td id="encabezado">CALIFICACIÓN</td>
                 <td id="encabezado">FECHA</td>
             </tr>
-        </tbody>
-    </table>
+
     <button onclick="printPage()">Imprimir</button>
-    <script>
-        function printPage() {
-            window.print();
-        }
-    </script>
+
 </body>
 </html>

@@ -2,8 +2,8 @@
 
     include 'config.php';
 
-    $sql = "INSERT INTO attendance (numero_empleado, nombre, puesto, fecha, capacitacion, imagen)
-    VALUES ('$numero_empleado', '$nombre', '$puesto', '$fecha', '$capacitacion', '$imagen_data_url')";
+    $sql = "INSERT INTO asistencia (No_Emp, Nom_Empleado, Id_Curso, Puesto, Fecha, Firma)
+    VALUES ('$numero_empleado', '$nombre', '$capacitacion', '$puesto', '$fecha', '$imagen_data_url')";
 
     if (mysqli_query($conn, $sql)) {
         // Si la consulta se ejecutó con éxito, mostrar un mensaje de éxito
