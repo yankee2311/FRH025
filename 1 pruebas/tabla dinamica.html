@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+  $("#myTable").tablesorter();
+});
+</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-QnLLJlYmKj7vZNnC1z7xNhj9cxv7G2zW0u0Dw1fOjKFZNUdZ8uJZxU9j9h5zY4qgY3jKiU6JLjV7S1Zf5U6A==" crossorigin="anonymous" />
+
+<style>
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+th {
+  background-color: #dddddd;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+</style>
+</head>
+<body>
+
+    <table id="myTable" class="tablesorter">
+        <thead>
+          <tr>
+            <th>
+              <span>Name</span>
+              <i class="fas fa-sort-up"></i>
+            </th>
+            <th>
+              <span>Age</span>
+              <i class="fas fa-sort"></i>
+            </th>
+            <th>
+              <span>Country</span>
+              <i class="fas fa-sort"></i>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- ... -->
+
+          <tr>
+            <td>Peter</td>
+            <td>25</td>
+            <td>USA</td>
+          </tr>
+          <tr>
+            <td>John</td>
+            <td>32</td>
+            <td>UK</td>
+          </tr>
+          <tr>
+            <td>Tina</td>
+            <td>28</td>
+            <td>Germany</td>
+          </tr>
+        </tbody>
+      </table>
+      
+      
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.3/js/jquery.tablesorter.min.js"></script>
+
+</body>
+</html>
